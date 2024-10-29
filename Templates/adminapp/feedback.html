@@ -1,0 +1,52 @@
+{% extends 'Navbar/ProjectNavbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Student Lung Heart PFSD Concepts</title>
+</head>
+<body>
+
+{% block body %}
+<div class="container">
+    <h1 class="text-center">Add Student Lung Heart PFSD Concepts</h1>
+    <br>
+
+    <form method="post" action="{% url 'feedbacklogic' %}">
+        {% csrf_token %}
+        
+        <div class="mb-3">
+            <label for="username" class="form-label">Username (Max 150 characters)</label>
+            <input type="text" class="form-control" id="username" name="username" maxlength="150" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="text" class="form-control" id="phone" name="phone" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control" id="description" name="description" rows="6" required></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="textfield" class="form-label">Text Field:</label>
+            <input type="text" class="form-control" id="textfield" name="textfield" required>
+        </div>
+
+        <div class="d-grid gap-2 col-6 mx-auto">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+</body>
+</html>

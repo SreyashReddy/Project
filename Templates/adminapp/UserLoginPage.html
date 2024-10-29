@@ -1,0 +1,36 @@
+{% extends 'NavBar/ProjectNavbar.html' %}
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Form</title>
+
+</head>
+<body>
+
+
+{% block body %}
+<div class="container mt-4 d-flex justify-content-center">
+    <div class="card shadow p-4 border-dark" style="width: 30rem; border-width: 2px;">
+        <form action="{% url 'UserLoginLogic' %}" method="POST">
+            {% csrf_token %}
+            <div class="input-group flex-nowrap mb-3">
+                <span class="input-group-text text-dark" id="addon-wrapping">@</span>
+                <input type="text" class="form-control" name="username" placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+                <label for="floatingPassword" class="text-dark">Password</label>
+            </div>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-dark btn-lg fw-bold">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+</body>
+</html>

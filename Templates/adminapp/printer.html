@@ -1,0 +1,29 @@
+{% extends 'NavBar/ProjectNavbar.html' %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block body %}
+<div class="container text-center">
+  <div class="row">
+    <div class="col">
+      First in DOM, no order applied
+      <br>
+      <form method="post" action="{% url 'printpagelogic' %}" >
+            {% csrf_token %}
+         <input type="text" name="user_input" required>
+         <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="col order-5">
+      Second in DOM, with a larger order
+        <h1>{{user_input}}</h1>
+    </div>
+  </div>
+</div>
+{% endblock %}
+</body>
+</html>

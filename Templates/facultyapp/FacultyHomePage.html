@@ -1,0 +1,43 @@
+{% extends 'NavBar/FacultyNavbar.html' %}  <!-- Extending the faculty navbar -->
+
+{% load static %}  <!-- Loading static files -->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faculty Home Page</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">  <!-- Link to your CSS -->
+</head>
+
+{% block content %}  <!-- Block content to be placed within the navbar layout -->
+<body>
+    <h1>Welcome to the Faculty Home Page</h1>
+    <p>Manage your courses, view assignments, and interact with students.</p>
+
+    <div>
+        <h2>Your Courses</h2>
+        <ul>
+            <li><a href="#">Course 1</a></li>
+            <li><a href="#">Course 2</a></li>
+            <li><a href="#">Course 3</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Student Assignments</h2>
+        <ul>
+            <li><a href="#">View Assignment 1</a></li>
+            <li><a href="#">View Assignment 2</a></li>
+            <li><a href="#">View Assignment 3</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <h2>Faculty Resources</h2>
+        <a href="#">Faculty Handbook</a> |
+        <a href="#">Schedule Office Hours</a> |
+        <a href="#">Contact Administration</a>
+    </div>
+</body>
+{% endblock %}
+</html>
